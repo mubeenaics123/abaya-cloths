@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niora Abayas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding-top: 140px;
+      font-family: serif;
+    }
+
+    /* Header */
+       .header {
+      text-align: center;
+     
+      font-family: serif;
+      letter-spacing: 2px;
+      border-bottom: 1px solid black;
+      background-color: #172f2f;
+      color: #af966c;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
+
+    /* Navbar */
+    .navbar {
+      top: 70px;
+      position: fixed;
+      width: 100%;
+      background-color: white;
+      z-index: 1020;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-link {
+      text-transform: uppercase;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .nav-link:hover {
+      color: #007bff;
+      border-bottom: 1px solid black;
+    }
+
+    /* Content */
+    .contain {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid black;
+      box-shadow: 2px 1px 5px black;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contain img {
+      flex: 1 1 100%;
+      max-width: 480px;
+      width: 100%;
+      height: 480px;
+      border-radius: 10px;
+    }
+
+    .box1 {
+      flex: 1 1 100%;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: #021a01;
+      color: #b5a755;
+      padding: 50px 0 20px 0;
+    }
+
+    footer a {
+      color: #d3d3d3;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 768px) {
+      .contain img, .box1 {
+        flex: 1 1 45%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="header">NIORA ABAYAS</h1>
+
+  <section>
+ <nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="logo2 (project).png" width="100" height="70" alt="Logo">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+
+      <!-- RIGHT-SIDE MENU -->
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">HOME</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABAYAS</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">ABOUT</a>
+        </li>
+         <li class="nav-item">
+              <a class="nav-link" href="signup.html"><i class="fa-solid fa-user"></i></a>
+            </li>
+            
+
+      </ul>
+       <a href="wishlist.html">
+            <i class="fa-solid fa-heart me-3 fs-4" title="Wishlist" style="cursor:pointer"></i>
+          </a>
+
+      <!-- RIGHT SIDE ICONS + SEARCH -->
+      <div class="d-flex align-items-center ms-3">
+
+       
+
+        <a href="cart.html" class="d-flex align-items-center me-3 text-decoration-none text-dark" title="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count" class="badge bg-dark text-white rounded-pill ms-1">0</span>
+        </a>
+
+        <i class="fa-solid fa-search me-2"></i>
+
+        <input type="text" class="form-control me-2" placeholder="Search" style="width:150px;">
+<li class="nav-item">
+            <button class="btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#loginModal">
+            Login
+            </button>
+            </li> 
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+<!-- Side Modal (Offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="loginModal">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Login</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control">
+      </div>
+
+      <button class="btn btn-success w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+  </section>
+  <!-- Breadcrumb -->
+  <div class="container mt-4">
+    <a href="index.html">Home</a> / <a href="about.html">About</a>
+  </div>
+
+  <!-- About Section -->
+  <div class="contain">
+    <img src="hanging1.jpg" alt="abaya">
+    <div class="box1">
+      <p>Our Company</p>
+      <h2>Know More About Us</h2>
+      <p>
+        Niora Abaya has chosen a different path. Clothing is not just for display, it is for protection of the body, the soul, and feminine dignity. Every design blends Eastern heritage, contemporary artistry, and reverence for a woman’s identity. We craft a sense of security, confidence, and inner beauty. True beauty lies in simplicity, grace, and gentle movement. Habayeb garments shine not only in the eyes of others but within the heart of the woman who wears them.
+        <br><br>
+        Sudevan Road, Kandath Complex, Gandhi Bazar Rd, Palakkad, Kerala 678001<br>
+        nioraabayas@gmail.com<br>
+        ph: 9824545221
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer >
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <h4>Niora Abayas</h4>
+          <p style="color:#d3d3d3; font-size:14px;">
+            Niora Abayas is a homegrown brand started in 2019. Started online, it is one of the most loved modest clothing brands in India. ❤️
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h4>Collections</h4>
+          <ul class="list-unstyled" style="line-height:2;">
+            <li><a href="abayas collections.html">All Abaya</a></li>
+            <li><a href="abayas collections.html">Black Abayas</a></li>
+            <li><a href="abayas collections.html">Open Abayas</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h4>Contact Us</h4>
+          <p style="color:#d3d3d3; font-size:14px; line-height:1.7;">
+            <i class="fa fa-map-marker-alt me-2"></i>Sudevan Road, Kandath Complex, Gandhi Bazar Rd,<br> Palakkad, Kerala 678001
+          </p>
+          <p style="color:#d3d3d3; font-size:14px;">
+            <i class="fa fa-envelope me-2"></i> support@nioraabayas.com
+          </p>
+          <p style="color:#d3d3d3; font-size:14px;">
+            <i class="fa fa-phone me-2"></i> +91 9824545221
+          </p>
+
+          <div class="d-flex gap-3 mt-2">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr style="border-color:#b5a755;">
+      <div class="text-center mt-3" style="color:#d3d3d3; font-size:13px;">
+        © 2025 Niora Abayas. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

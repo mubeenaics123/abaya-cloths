@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abayas — Product Grid</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { background: #fff; color: #222; }
+    .page-title { font-size: 32px; font-weight: 500; margin-bottom: 18px; }
+    .divider { height: 2px; background: #e7e7e7; margin: 12px 0 22px; }
+
+    .filter-title { font-weight: 600; margin-bottom: 10px; }
+    .sidebar .list-unstyled li { padding: 6px 0; color:#666; cursor: pointer; }
+    .sidebar .list-unstyled li:hover { color: #000; font-weight: 500; }
+    .filter-section { border-top: 1px solid #eee; padding-top: 14px; margin-top: 18px; }
+
+    .product-card { border: none; margin-bottom: 28px; }
+    .product-image { height: 350px; overflow: hidden; background: #f9f9f9;position:relative; }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .product-image:hover img { transform: scale(1.05); }
+
+    .product-info { padding: 12px 4px 0; text-align: left; }
+    .product-title { font-size: 15px; color: #333; margin-bottom: 6px; }
+    .product-price { font-weight: 700; color: #000; margin-bottom: 6px; }
+
+    .sidebar-sep { border-right: 1px solid #eee; padding-right: 28px; }
+
+    @media (max-width: 767.98px) {
+      .product-image { height: 260px; }
+      .sidebar-sep { border: none; padding-right: 0; }
+    }
+    body{
+       padding-top: 130px;
+    }
+    .header {
+      text-align: center;
+     
+      font-family: serif;
+      letter-spacing: 2px;
+      border-bottom: 1px solid black;
+      background-color: #021a01;
+      color: #b5a755;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
+  
+      
+    }
+    .navbar {
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  width: 100%;
+  z-index: 999;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+    .nav-link {
+      text-transform: uppercase;
+      font-size:15px;
+      color: #333;
+      padding: 15px;
+    }
+    .nav-link:hover {
+      color: #007bff;
+      border-bottom: 1px solid black;
+    }
+    .card{
+      background-color:#021a01;
+      color: #b5a755;
+      width: 300px;
+      font-size: 20px;
+      border-radius: 10px;
+      font-family: serif;
+    }
+    .card:hover{
+      background-color: white;
+      color: black;
+    }
+
+    /* small animation for badge feedback */
+    .badge-pop {
+      animation: pop .28s ease;
+    }
+    @keyframes pop {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.45); }
+      100% { transform: scale(1); }
+    }
+
+    /* make badge a little smaller and vertically center with icon */
+    #cart-count {
+      font-size: 0.75rem;
+      vertical-align: text-top;
+    }
+.wishlist-icon {
+  font-size: 22px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ccc;
+  cursor: pointer;
+  z-index: 100;
+}
+.wishlist-icon.active {
+  color: red;
+}
+ #logo{
+        float: right;
+      }
+
+  </style>
+</head>
+<body>
+<h1 class="header">NIORA ABAYAS</h1>
+
+  <section>
+ <nav class="navbar navbar-expand-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="logo2 (project).png" width="100" height="70" alt="Logo">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mynavbar">
+
+      <!-- RIGHT-SIDE MENU -->
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">HOME</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABAYAS</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">ABOUT</a>
+        </li>
+         <li class="nav-item">
+              <a class="nav-link" href="sign up.html"><i class="fa-solid fa-user"></i></a>
+            </li>
+            
+
+      </ul>
+       <a href="wishlist.html">
+            <i class="fa-solid fa-heart me-3 fs-4" title="Wishlist" style="cursor:pointer"></i>
+          </a>
+
+      <!-- RIGHT SIDE ICONS + SEARCH -->
+      <div class="d-flex align-items-center ms-3">
+
+       
+
+        <a href="cart.html" class="d-flex align-items-center me-3 text-decoration-none text-dark" title="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count" class="badge bg-dark text-white rounded-pill ms-1">0</span>
+        </a>
+
+        <i class="fa-solid fa-search me-2"></i>
+
+        <input type="text" class="form-control me-2" placeholder="Search" style="width:150px;">
+<li class="nav-item">
+            <button class="btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#loginModal">
+            Login
+            </button>
+            </li> 
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+<!-- Side Modal (Offcanvas) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="loginModal">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Login</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control">
+      </div>
+
+      <button class="btn btn-success w-100">Login</button>
+    </form>
+  </div>
+</div>
+
+  </section>
+  <a style="color: black; margin-left:20px" href="index.html">Home</a>/<a style="color: black;margin-left:5px" href="abayas collectionss.html">abayas</a>
+  <div class="container py-4">
+    <div class="page-title">Abayas</div>
+    <div class="divider"></div>
+
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-lg-3 col-md-4 sidebar-sep sidebar">
+        <div class="mb-4">
+          <div class="filter-title">All Abaya Designs</div>
+          <ul class="list-unstyled small">
+            <li onclick="filterAbayas('all')">Abayas</li>
+            <li class="ps-3" onclick="filterAbayas('open')">- Open Abaya</li>
+            <li class="ps-3" onclick="filterAbayas('black')">- Black Abaya</li>
+            <li class="ps-3" onclick="filterAbayas('stone')">- Stone Abaya</li>
+            <li class="ps-3" onclick="filterAbayas('embroidery')">- Embroidery Abaya</li>
+            <li class="ps-3" onclick="filterAbayas('plain')">- Plain Abaya</li>
+
+          </ul>
+        </div>
+      </aside>
+
+
+      <!-- Product grid -->
+      <main class="col-lg-9 col-md-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="small">Product Compare (0)</div>
+
+        </div>
+
+        <div class="row" id="productGrid">
+          <!-- Product Cards -->
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+           <div class="product-image">
+ <i class="fa-solid fa-heart wishlist-icon"
+   onclick="toggleWishlist(this)"
+   data-id="1"
+   data-name="Classic Open Abaya"
+   data-price="2400"
+   data-img="abaya21.jpg"></i>
+
+
+  <img src="abaya21.jpg" alt="abaya" class="d-block">
+</div>
+            <div class="product-info">
+              <div class="product-title">Classic Open Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+  <i class="fa-solid fa-heart wishlist-icon"
+   onclick="toggleWishlist(this)"
+   data-id="2"
+   data-name="Classic Open Abaya"
+   data-price="2400"
+   data-img="laxuary abaya12.jpg"></i>
+  <img src="laxuary abaya12.jpg" alt="abaya" class="d-block">
+</div>
+            <div class="product-info">
+              <div class="product-title">Luxury Velvet Abaya</div>
+              <div class="product-price">₹3,000</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="stone">
+             <div class="product-image">
+  <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="3"
+         data-name="Classic Open Abaya"
+         data-price="2400"
+         data-img="stone abaya7.jpeg"></i>
+
+  <img src="stone abaya7.jpeg" alt="abaya" class="d-block">
+</div>
+            
+            <div class="product-info">
+              <div class="product-title">Stone Embellished Abaya</div>
+              <div class="product-price">₹2,800</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="stone">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="4"
+         data-name="Classic Open Abaya"
+         data-price="2400"
+         data-img="stone abaya6.jpeg"></i>
+            <img src="stone abaya6.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Stone Embellished Abaya</div>
+              <div class="product-price">₹3,000</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="stone">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="5"
+         data-name="Classic Open Abaya"
+         data-price="2400"
+         data-img="stone abaya2.jpeg"></i>
+            <img src="stone abaya2.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Stone Embellished Abaya</div>
+              <div class="product-price">₹2,800</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="stone">
+            <div class="product-image"> <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="6"
+         data-name="Classic Open Abaya"
+         data-price="2800"
+         data-img="stone abaya1.jpeg"></i>
+
+            <img src="stone abaya1.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Stone Embellished Abaya</div>
+              <div class="product-price">₹2,800</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="stone">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="7"
+         data-name="Stone Embellished Abaya"
+         data-price="2800"
+         data-img="stone abaya 8.jpeg"></i>
+
+            <img src="stone abaya 8.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Stone Embellished Abaya</div>
+              <div class="product-price">₹2,800</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="8"
+         data-name="Floral Embroidery Abaya"
+         data-price="2600"
+         data-img="embroid.jpeg"></i>
+
+                <img src="embroid.jpeg" alt="abaya" class="d-block">
+
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral Embroidery Abaya</div>
+              <div class="product-price">₹2,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="9"
+         data-name="Simple Plain Abaya"
+         data-price="2200"
+         data-img="laxuary abaya13.jpg"></i>
+
+             <img src="laxuary abaya13.jpg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Simple Plain Abaya</div>
+              <div class="product-price">₹2,200 </div>
+              <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="10"
+         data-name="Floral Embroidery Abaya"
+         data-price="2600"
+         data-img="embroidey.jpeg"></i>
+
+             <img src="embroidey.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral Embroidery Abaya</div>
+              <div class="product-price">₹2,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+<div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="11"
+         data-name="Classic black Abaya"
+         data-price="2600"
+         data-img="black abaya 3.jpeg"></i>
+             <img src="black abaya 3.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic black Abaya</div>
+              <div class="product-price">₹2,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+<div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="12"
+         data-name="Floral plain Abaya"
+         data-price="3600"
+         data-img="laxuary abaya 14.jpg"></i>
+             <img src="laxuary abaya 14.jpg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral plain Abaya</div>
+              <div class="product-price">₹3,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="13"
+         data-name="Classic black Abaya"
+         data-price="2600"
+         data-img="black abaya 5.jpeg"></i>
+             <img src="black abaya 5.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic black Abaya</div>
+              <div class="product-price">₹2,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="14"
+         data-name="Classic black Abaya"
+         data-price="2300"
+         data-img="black abaya.jpeg"></i>
+             <img src="black abaya.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic black Abaya</div>
+              <div class="product-price">₹2,300</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="15"
+         data-name="Classic black Abaya"
+         data-price="2300"
+         data-img="black abaya1.jpeg"></i>
+             <img src="black abaya1.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic black Abaya</div>
+              <div class="product-price">₹2,300</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="16"
+         data-name="Classic Open Abaya"
+         data-price="2600"
+         data-img="black abaya 2.jpeg"></i>
+             <img src="black abaya 2.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic Open Abaya</div>
+              <div class="product-price">₹2,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="black">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="17"
+         data-name="Classic black Abaya"
+         data-price="₹2,600"
+         data-img="black abaya 10.jpeg"></i>
+             <img src="black abaya 10.jpeg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic black Abaya</div>
+              <div class="product-price">₹2,600 </div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+ <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="18"
+         data-name="Classic Open Abaya"
+         data-price="₹2,400"
+         data-img="abaya pics2.jpeg"></i>
+           <img src="abaya pics2.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic Open Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="19"
+         data-name="Classic Open Abaya"
+         data-price="₹₹2,400"
+         data-img="green abaya2.jpg"></i>
+           <img src="green abaya2.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic Open Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+ <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="20"
+         data-name="Classic plain Abaya"
+         data-price="₹2,400"
+         data-img="abaya22.jpeg"></i>
+           <img src="abaya22.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic plain Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+ <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="21"
+         data-name="Classic embroidery Abaya"
+         data-price="₹2,400"
+         data-img="abaya55.jpg"></i>
+           <img src="abaya55.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic embroidery Abaya</div>
+              <div class="product-price">₹2,400 </div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+ <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="22"
+         data-name="Classic Open Abaya"
+         data-price="₹2,400"
+         data-img="buttetrfly abaya.jpeg"></i>
+           <img src="buttetrfly abaya.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic Open Abaya</div>
+              <div class="product-price">2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="open">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="23"
+         data-name="Classic Open Abaya"
+         data-price="₹2,400"
+         data-img="green2.jpg"></i>
+           <img src="green2.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic open Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="24"
+         data-name="Classic embroidery Abaya"
+         data-price="₹2,400"
+         data-img="stone abyaa4.jpeg"></i>
+           <img src="stone abyaa4.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic embroidery Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="25"
+         data-name="Classic embroidery Abaya"
+         data-price="₹3,400"
+         data-img="stone abaya5.jpeg"></i>
+           <img src="stone abaya5.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic embroidery Abaya</div>
+              <div class="product-price">₹3,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="embroidery">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="26"
+         data-name="Classic embroidery Abaya"
+         data-price="₹2,400"
+         data-img="stone abaya8.jpeg"></i>
+           <img src="stone abaya8.jpeg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic embroidery Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="27"
+         data-name="Classic plain Abaya"
+         data-price="₹2,400"
+         data-img="abaya16.jpg"></i>
+           <img src="abaya16.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic plain Abaya</div>
+              <div class="product-price">₹2,400 </div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="28"
+         data-name="Classic plain Abaya"
+         data-price="₹2,400"
+         data-img="abaya7.jpg"></i>
+           <img src="abaya7.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic plain Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+               <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="29"
+         data-name="Classic plain Abaya"
+         data-price="₹2,400"
+         data-img="abaya8.jpg"></i>
+           <img src="abaya8.jpg" alt="abaya" class="d-block abaya-img">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Classic plain Abaya</div>
+              <div class="product-price">₹2,400</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+              <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="30"
+         data-name="Floral plain Abaya"
+         data-price="₹3,600"
+         data-img="abaya23.jpg"></i>
+             <img src="abaya23.jpg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral plain Abaya</div>
+              <div class="product-price">₹3,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+                <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="31"
+         data-name="Floral plain Abaya"
+         data-price="₹3,600"
+         data-img="abaya13.jpg"></i>
+             <img src="abaya13.jpg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral plain Abaya</div>
+              <div class="product-price">₹3,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+          
+           <div class="col-lg-4 col-md-6 col-sm-6 product-card" data-category="plain">
+            <div class="product-image">
+                      <i class="fa-solid fa-heart wishlist-icon" 
+         onclick="toggleWishlist(this)"
+         data-id="32"
+         data-name="Floral plain Abaya"
+         data-price="₹3,600"
+         data-img="green.jpg"></i>
+             
+             <img src="green.jpg" alt="abaya" class="d-block">
+            </div>
+            <div class="product-info">
+              <div class="product-title">Floral plain Abaya</div>
+              <div class="product-price">₹3,600</div>
+                <button class="card" type="button">add to card</button>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer class="mt-5" style="background:#021a01; color:#b5a755; padding:50px 0 20px 0;">
+  <div class="container">
+    <div class="row">
+
+      <!-- Column 1 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">Niora Abayas</h4>
+        <p style="color:#d3d3d3; font-size:14px;">
+         niora abayas is a homegrown brand started in January 2019. Started with just selling abayas Online, we are proud to say that niora abayas is the most loved Modest Clothing Brand in India. ❤️
+        </p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">collections</h4>
+        
+        <ul class="list-unstyled" style="line-height:2;">
+          <li><a href="abaya collections.html" style="color:#d3d3d3;">All Abaya</a></li>
+          <li><a href="abayas collections.html" style="color:#d3d3d3;">Black Abayas</a></li>
+          <li><a href="abayas collections.html" style="color:#d3d3d3;">Open Abays</a></li>
+          <li><a href="about.html" style="color:#d3d3d3;">About Us</a></li>
+          
+        </ul>
+      </div>
+     
+
+      <!-- Column 4 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">Contact Us</h4>
+        <p style="color:#d3d3d3; font-size:14px; line-height:1.7;">
+          <i class="fa fa-map-marker-alt me-2"></i>Sudevan Road, Kandath Complex, Gandhi Bazar Rd,<br> Palakkad, Kerala 678001
+        </p>
+        <p style="color:#d3d3d3; font-size:14px;">
+          <i class="fa fa-envelope me-2"></i> support@nioraabayas.com
+        </p>
+        <p style="color:#d3d3d3; font-size:14px;">
+          <i class="fa fa-phone me-2"></i> +91 9824545221
+        </p>
+
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr style="border-color:#b5a755;">
+
+    <div class="text-center mt-3" style="color:#d3d3d3; font-size:13px;">
+      © 2025 Niora Abayas. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+  <script>
+    function filterAbayas(category) {
+      const products = document.querySelectorAll('.product-card');
+      products.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+  <!-- Add to Cart Script -->
+  <script>
+    (function () {
+      // Get elements
+      const grid = document.getElementById('productGrid');
+      const cartCountEl = document.getElementById('cart-count');
+
+      // Load saved count from localStorage
+      let cartCount = parseInt(localStorage.getItem('niora_cart_count') || '0', 10);
+      updateBadge();
+
+      // Use event delegation: handle clicks on any button with class "card" inside the productGrid
+      grid.addEventListener('click', function (e) {
+        const btn = e.target.closest('button.card');
+        if (!btn) return;
+
+        // increment count
+        cartCount += 1;
+        // save
+        localStorage.setItem('niora_cart_count', String(cartCount));
+        // update badge
+        updateBadge();
+
+        // temporary feedback: change button text to "Added" for 1s (then revert)
+        const originalText = btn.textContent;
+        btn.textContent = 'Added ✓';
+        btn.disabled = true;
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 1000);
+      });
+
+      function updateBadge() {
+        cartCountEl.textContent = cartCount;
+        // small pop animation
+        cartCountEl.classList.remove('badge-pop');
+        // force reflow to restart animation
+        void cartCountEl.offsetWidth;
+        cartCountEl.classList.add('badge-pop');
+
+        // update accessible label
+        cartCountEl.setAttribute('aria-live', 'polite');
+        cartCountEl.setAttribute('aria-label', cartCount + ' items in cart');
+      }
+    })();
+
+  </script>
+  <!-- Add-to-Cart (stores full items in localStorage under key "niora_cart") -->
+<script>
+(function () {
+  const GRID_ID = 'productGrid';
+  const STORAGE_KEY = 'niora_cart';
+  const grid = document.getElementById(GRID_ID);
+  const cartCountEl = document.getElementById('cart-count');
+
+  // helpers
+  function loadCart() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch (e) { return {}; }
+  }
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updateBadge(cart);
+    // also keep older niora_cart_count (if other code expects it) — optional:
+    try {
+      const total = Object.values(cart).reduce((s, it) => s + (it.qty || 0), 0);
+      localStorage.setItem('niora_cart_count', String(total));
+    } catch(e) {}
+  }
+  function parsePrice(text) {
+    if (!text) return 0;
+    const m = text.replace(/,/g,'').match(/[\d.]+/);
+    return m ? parseFloat(m[0]) : 0;
+  }
+
+  function updateBadge(cart) {
+    cart = cart || loadCart();
+    const count = Object.values(cart).reduce((s, it) => s + (it.qty || 0), 0);
+    if (cartCountEl) {
+      cartCountEl.textContent = count;
+      cartCountEl.classList.remove('badge-pop');
+      void cartCountEl.offsetWidth;
+      cartCountEl.classList.add('badge-pop');
+      cartCountEl.setAttribute('aria-label', count + ' items in cart');
+    }
+  }
+
+  // init badge on page load
+  updateBadge();
+
+  // Event delegation: handle clicks on add buttons (buttons use class "card")
+  grid.addEventListener('click', function (e) {
+    const btn = e.target.closest('button.card');
+    if (!btn) return;
+
+    const productCard = btn.closest('.product-card');
+    if (!productCard) return;
+
+    // read product details from DOM
+    const titleEl = productCard.querySelector('.product-title');
+    const priceEl = productCard.querySelector('.product-price');
+    const imgEl = productCard.querySelector('img');
+
+    const title = titleEl ? titleEl.textContent.trim() : 'Product';
+    const price = priceEl ? parsePrice(priceEl.textContent) : 0;
+    const image = imgEl ? imgEl.getAttribute('src') : '';
+
+    // prefer explicit data-id if present, otherwise create one from title+image
+    const explicitId = productCard.getAttribute('data-id');
+    const idBase = explicitId || (image || title).toString();
+    const id = idBase.replace(/\s+/g, '_').replace(/[^\w\-_.]/g, '').slice(0, 200);
+
+    // load, update, save
+    const cart = loadCart();
+    if (!cart[id]) {
+      cart[id] = { id, title, price, image, qty: 0 };
+    }
+    cart[id].qty = (cart[id].qty || 0) + 1;
+    saveCart(cart);
+
+    // quick button feedback
+    const origText = btn.textContent;
+    btn.textContent = 'Added ✓';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = origText; btn.disabled = false; }, 800);
+  });
+
+  // Make sure if other tabs update localStorage we refresh badge
+  window.addEventListener('storage', (e) => {
+    if (e.key === STORAGE_KEY || e.key === 'niora_cart_count') {
+      updateBadge();
+    }
+  });
+})();
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const WISHLIST_KEY = "niora_wishlist";
+
+  function loadWishlist() {
+    try {
+      return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || {};
+    } catch {
+      return {};
+    }
+  }
+
+  function saveWishlist(data) {
+    localStorage.setItem(WISHLIST_KEY, JSON.stringify(data));
+  }
+
+  function toggleWishlist(icon) {
+    const id = icon.dataset.id;
+    const name = icon.dataset.name;
+    const price = icon.dataset.price;
+    const img = icon.dataset.img;
+
+    let wishlist = loadWishlist();
+
+    if (wishlist[id]) {
+      // remove
+      delete wishlist[id];
+      icon.classList.remove("active");
+    } else {
+      // add
+      wishlist[id] = { id, name, price, img };
+      icon.classList.add("active");
+    }
+
+    saveWishlist(wishlist);
+  }
+
+  // Highlight wishlist hearts on page load
+  function refreshWishlistIcons() {
+    const wishlist = loadWishlist();
+
+    document.querySelectorAll(".wishlist-icon").forEach(icon => {
+      const id = icon.dataset.id;
+      if (wishlist[id]) {
+        icon.classList.add("active");
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", refreshWishlistIcons);
+</script>
+<script>
+const WISHLIST_KEY = "niora_wishlist";
+
+function loadWishlist() {
+    try { return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || {}; }
+    catch { return {}; }
+}
+
+function saveWishlist(data) {
+    localStorage.setItem(WISHLIST_KEY, JSON.stringify(data));
+}
+
+function toggleWishlist(icon) {
+    const id = icon.dataset.id;
+    const name = icon.dataset.name;
+    const price = icon.dataset.price;
+    const img = icon.dataset.img;
+
+    let wishlist = loadWishlist();
+
+    if (wishlist[id]) {
+        delete wishlist[id];
+        icon.classList.remove("active");
+    } else {
+        wishlist[id] = { id, name, price, img };
+        icon.classList.add("active");
+    }
+
+    saveWishlist(wishlist);
+}
+
+function refreshWishlistIcons() {
+    const wishlist = loadWishlist();
+    document.querySelectorAll(".wishlist-icon").forEach(icon => {
+        const id = icon.dataset.id;
+        if (wishlist[id]) icon.classList.add("active");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", refreshWishlistIcons);
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    let wishlist = JSON.parse(localStorage.getItem("niora_wishlist") || "{}");
+
+    // Set red icons for already saved products
+    document.querySelectorAll(".wishlist-icon").forEach(icon => {
+        let id = icon.getAttribute("data-id");
+        if (wishlist[id]) {
+            icon.classList.add("active");  // make red
+        }
+    });
+});
+</script>
+<script>
+
+const WISHLIST_KEY = "niora_wishlist";
+
+// Load wishlist
+function loadWishlist() {
+    return JSON.parse(localStorage.getItem(WISHLIST_KEY) || "[]");
+}
+
+// Save wishlist
+function saveWishlist(list) {
+    localStorage.setItem(WISHLIST_KEY, JSON.stringify(list));
+}
+
+// Toggle wishlist item
+function toggleWishlist(icon) {
+    let id = icon.dataset.id;
+    let name = icon.dataset.name;
+    let price = icon.dataset.price;
+    let img = icon.dataset.img;
+
+    let wishlist = loadWishlist();
+
+    // Check if item already exists
+    let index = wishlist.findIndex(item => item.id === id);
+
+    if (index === -1) {
+        // Add new item
+        wishlist.push({ id, name, price, img });
+        icon.classList.add("active");   // Turn red
+    } else {
+        // Remove item
+        wishlist.splice(index, 1);
+        icon.classList.remove("active"); // Remove red
+    }
+
+    saveWishlist(wishlist);
+}
+
+// On page load → activate icons already in wishlist
+document.addEventListener("DOMContentLoaded", function() {
+    let wishlist = loadWishlist();
+
+    document.querySelectorAll(".wishlist-icon").forEach(icon => {
+        let id = icon.dataset.id;
+        if (wishlist.some(item => item.id === id)) {
+            icon.classList.add("active");
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
