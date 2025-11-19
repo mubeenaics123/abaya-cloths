@@ -11,13 +11,13 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    body {
-      padding-top: 140px;
-      font-family: serif;
-    }
+    body{
+ padding-top: 130px;
+  font-family:serif;
+}
 
-    /* Header */
-       .header {
+  
+      .header {
       text-align: center;
      
       font-family: serif;
@@ -30,63 +30,39 @@
   width: 100%;
   z-index: 1000;
   padding: 10px 0;
-
-    /* Navbar */
-    .navbar {
-      top: 70px;
-      position: fixed;
-      width: 100%;
-      background-color: white;
-      z-index: 1020;
-      border-bottom: 1px solid #ddd;
+  
+      
     }
-
+    .navbar {
+  position: fixed;
+  top: 60px; /* Adjust based on header height */
+  width: 100%;
+  z-index: 999;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
     .nav-link {
+
       text-transform: uppercase;
-      font-size: 15px;
+      font-size:15px;
       color: #333;
     }
-
     .nav-link:hover {
       color: #007bff;
       border-bottom: 1px solid black;
     }
 
-    /* Content */
-    .contain {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 1px solid black;
-      box-shadow: 2px 1px 5px black;
-      background-color: #fff;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
 
-    .contain img {
-      flex: 1 1 100%;
-      max-width: 480px;
-      width: 100%;
-      height: 480px;
-      border-radius: 10px;
-    }
-
-    .box1 {
-      flex: 1 1 100%;
-      font-size: 18px;
-      line-height: 1.7;
-    }
+   
 
     /* Footer */
-    footer {
+    footer{
       background: #021a01;
       color: #b5a755;
       padding: 50px 0 20px 0;
     }
 
-    footer a {
+    footer a{
       color: #d3d3d3;
       text-decoration: none;
     }
@@ -198,10 +174,14 @@
     <a href="index.html">Home</a> / <a href="about.html">About</a>
   </div>
 
-  <!-- About Section -->
-  <div class="contain">
-    <img src="hanging1.jpg" alt="abaya">
-    <div class="box1">
+
+  <div id="main" class="container mt-2">
+    <div class="row">
+    <div class="col-md-5">
+    <img src="hanging1.jpg" alt="abaya" width="500px"height="400px">
+  </div>
+  <div class="col-md-7">
+
       <p>Our Company</p>
       <h2>Know More About Us</h2>
       <p>
@@ -212,57 +192,71 @@
         ph: 9824545221
       </p>
     </div>
+    </div>
   </div>
 
-  <!-- Footer -->
-  <footer >
-    <div class="container">
-      <div class="row">
+  <footer class="mt-5" style="background:#021a01; color:#b5a755; padding:50px 0 20px 0;">
+  <div class="container">
+    <div class="row">
 
-        <div class="col-md-4 mb-4">
-          <h4>Niora Abayas</h4>
-          <p style="color:#d3d3d3; font-size:14px;">
-            Niora Abayas is a homegrown brand started in 2019. Started online, it is one of the most loved modest clothing brands in India. ❤️
-          </p>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <h4>Collections</h4>
-          <ul class="list-unstyled" style="line-height:2;">
-            <li><a href="abayas collections.html">All Abaya</a></li>
-            <li><a href="abayas collections.html">Black Abayas</a></li>
-            <li><a href="abayas collections.html">Open Abayas</a></li>
-            <li><a href="about.html">About Us</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <h4>Contact Us</h4>
-          <p style="color:#d3d3d3; font-size:14px; line-height:1.7;">
-            <i class="fa fa-map-marker-alt me-2"></i>Sudevan Road, Kandath Complex, Gandhi Bazar Rd,<br> Palakkad, Kerala 678001
-          </p>
-          <p style="color:#d3d3d3; font-size:14px;">
-            <i class="fa fa-envelope me-2"></i> support@nioraabayas.com
-          </p>
-          <p style="color:#d3d3d3; font-size:14px;">
-            <i class="fa fa-phone me-2"></i> +91 9824545221
-          </p>
-
-          <div class="d-flex gap-3 mt-2">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-
+      <!-- Column 1 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">Niora Abayas</h4>
+        <p style="color:#d3d3d3; font-size:14px;">
+         niora abayas is a homegrown brand started in January 2019. Started with just selling abayas Online, we are proud to say that niora abayas is the most loved Modest Clothing Brand in India. ❤️
+        </p>
       </div>
 
-      <hr style="border-color:#b5a755;">
-      <div class="text-center mt-3" style="color:#d3d3d3; font-size:13px;">
-        © 2025 Niora Abayas. All rights reserved.
+      <!-- Column 2 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">collections</h4>
+        
+        <ul class="list-unstyled" style="line-height:2;">
+          <li><a href="abayas collections.html" style="color:#d3d3d3;">All Abaya</a></li>
+          <li><a href="abayas collections.html" style="color:#d3d3d3;">Black Abayas</a></li>
+          <li><a href="abayas collections.html" style="color:#d3d3d3;">Open Abays</a></li>
+          <li><a href="about.html" style="color:#d3d3d3;">About Us</a></li>
+          
+        </ul>
       </div>
+     
+
+      <!-- Column 4 -->
+      <div class="col-md-4 mb-4">
+        <h4 class="mb-3">Contact Us</h4>
+        <p style="color:#d3d3d3; font-size:14px; line-height:1.7;">
+          <i class="fa fa-map-marker-alt me-2"></i>Sudevan Road, Kandath Complex, Gandhi Bazar Rd,<br> Palakkad, Kerala 678001
+        </p>
+        <p style="color:#d3d3d3; font-size:14px;">
+          <i class="fa fa-envelope me-2"></i> support@nioraabayas.com
+        </p>
+        <p style="color:#d3d3d3; font-size:14px;">
+          <i class="fa fa-phone me-2"></i> +91 9824545221
+        </p>
+
+        <div class="d-flex gap-3 mt-2">
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" style="color:#b5a755; font-size:20px;">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
-  </footer>
+
+    <hr style="border-color:#b5a755;">
+
+    <div class="text-center mt-3" style="color:#d3d3d3; font-size:13px;">
+      © 2025 Niora Abayas. All rights reserved.
+    </div>
+
+  </div>
+</footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
