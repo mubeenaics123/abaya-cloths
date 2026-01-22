@@ -28,22 +28,28 @@ body {
   padding-top: 180px; /* header + navbar combined */
 }
 
-    .header {
-      text-align: center;
-     
-      font-family: serif;
-      letter-spacing: 2px;
-      border-bottom: 1px solid black;
-      background-color: #021a01;
-      color: #b5a755;
+   .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1000;
-  padding: 10px 0;
-  
-      
-    }
+  text-align: center;
+  font-family: serif;
+  letter-spacing: 2px;
+  background-color: #021a01;
+  color: #b5a755;
+  padding: 12px 0;
+  z-index: 1050;
+}
+	@media (max-width: 768px) {
+  .header {
+    font-size: 18px;      /* smaller text */
+    letter-spacing: 1px; /* tighter spacing */
+    padding: 8px 0;      /* less height */
+  }
+}
+
+
     .navbar {
  position: sticky;
   top: 0;
@@ -591,6 +597,7 @@ border: 1px solid black;
 </body>
 
 </html>
+
 
 
 
