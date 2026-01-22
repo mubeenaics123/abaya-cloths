@@ -217,12 +217,37 @@ border: 1px solid black;
     text-align: center;
     z-index: 10;
   }
+	.top-welcome{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 12px 0;
+  background: #0b2a14;   /* optional */
+  color: #d4af37;        /* gold look */
+  letter-spacing: 1px;
+}
+
+.nav-icon{
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media(max-width:768px){
+  .top-welcome{
+    font-size: 18px;
+  }
+}
+
    
 </style>
 </head>
 <body>
 
-
+<div class="top-welcome">
+  Welcome NIORA
+</div>
   <section>
 <nav class="navbar navbar-expand-sm sticky-top">
 
@@ -579,6 +604,7 @@ border: 1px solid black;
 </body>
 
 </html>
+
 
 
 
