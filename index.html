@@ -40,15 +40,7 @@
 position: fixed;
 }
 
-	.navbar {
-  background-color: white;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar.scrolled {
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+	
     .nav-link {
       text-transform: uppercase;
       font-size:15px;
@@ -609,15 +601,7 @@ font-family:serif;
     function change1(imagePath){
       document.getElementById('main2').src = imagePath;
     }
- window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+ 
 
     
   </script>
@@ -626,6 +610,7 @@ font-family:serif;
 </body>
 
 </html>
+
 
 
 
