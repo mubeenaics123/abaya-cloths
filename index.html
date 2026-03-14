@@ -29,13 +29,35 @@
   padding: 0;
 }
 	/* Mobile menu background */
+/* Mobile navbar full width */
 @media (max-width: 991px) {
-  .navbar-collapse {
-    background-color: white;
-    width:100%;
+
+  .navbar-collapse{
+    background: white;
+    width: 100%;
+    margin: 0;
+    padding: 20px 15px;
   }
+
+  .navbar .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 }
-	
+	@media (max-width: 991px){
+
+  .navbar-collapse .d-flex{
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .navbar-nav{
+    margin-bottom: 10px;
+  }
+
+}
  .navbar {
 	
 	
